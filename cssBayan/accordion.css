@@ -1,0 +1,26 @@
+.accordion__input_item-1:checked
+  ~ .accordion__items
+  .accordion__item_1
+  .accordion__item-image,
+.accordion__input_item-2:checked
+  ~ .accordion__items
+  .accordion__item_2
+  .accordion__item-image,
+.accordion__input_item-3:checked
+  ~ .accordion__items
+  .accordion__item_3
+  .accordion__item-image,
+.accordion__input_item-4:checked
+  ~ .accordion__items
+  .accordion__item_4
+  .accordion__item-image {
+  display: block;
+}
+
+.accordion__item:hover .accordion__item-image {
+  display: block;
+}
+
+.accordion__item-image {
+  display: none;
+}
