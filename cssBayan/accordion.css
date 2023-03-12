@@ -23,15 +23,6 @@
   color: #1864ab;
 }
 
-.accordion__items:hover * {
-  color: #000000;
-  cursor: pointer;
-}
-
-.accordion__items:hover .accordion__item-icon {
-  display: block;
-}
-
 .accordion__item-header {
   display: flex;
   justify-content: space-between;
@@ -59,11 +50,6 @@
   width: 16em;
   height: 16em;
   transition: transform 0.3s linear;
-}
-
-.accordion__item:hover .accordion__item-image {
-  display: block;
-  animation: grow 0.3s linear forwards;
 }
 
 .accordion__item-image {
@@ -150,5 +136,21 @@
 @media screen and (min-width: 1920px) {
   .accordion {
     font-size: 0.0875rem;
+  }
+}
+
+@media (hover: hover) {
+  .accordion__items:hover * {
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .accordion__items:hover .accordion__item-icon {
+    display: block;
+  }
+
+  .accordion__item:hover .accordion__item-image {
+    display: block;
+    animation: grow 0.3s linear forwards;
   }
 }
