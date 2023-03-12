@@ -1,3 +1,78 @@
+.accordion {
+  font-size: 0.0625rem; /* === 1px if html font-size === 16px */
+}
+
+.accordion__inner {
+  max-width: 820em;
+  margin: auto;
+  padding: 0 10em;
+}
+
+.accordion__input {
+  visibility: hidden;
+}
+
+.accordion__title {
+  margin-top: 0.5em;
+
+  font-family: sans-serif;
+  font-size: 20em;
+}
+
+.accordion__items {
+  color: #1864ab;
+}
+
+.accordion__items:hover * {
+  color: #000000;
+  cursor: pointer;
+}
+
+.accordion__items:hover .accordion__item-icon {
+  display: block;
+}
+
+.accordion__item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  padding: 10em 0;
+  border-top: 1px solid #dee2e6;
+  transition: opacity 0.1s linear;
+}
+
+.accordion__item:active {
+  opacity: 0.5;
+}
+
+.accordion__item-title {
+  font-family: sans-serif;
+  font-size: 16em;
+}
+
+.accordion__item-icon {
+  display: none;
+  width: 16em;
+  height: 16em;
+  transition: transform 0.3s linear;
+}
+
+.accordion__item:hover .accordion__item-image {
+  display: block;
+  animation: grow 0.3s linear forwards;
+}
+
+.accordion__item-image {
+  display: none;
+  width: 50%;
+  margin-top: 5em;
+  align-self: center;
+}
+
 .accordion__input_item-1:checked
   ~ .accordion__items
   .accordion__item_1
@@ -15,12 +90,65 @@
   .accordion__item_4
   .accordion__item-image {
   display: block;
+  animation: grow 0.3s linear forwards;
 }
 
-.accordion__item:hover .accordion__item-image {
-  display: block;
+.accordion__input_item-1:checked
+  ~ .accordion__items
+  .accordion__item_1
+  .accordion__item-title,
+.accordion__input_item-2:checked
+  ~ .accordion__items
+  .accordion__item_2
+  .accordion__item-title,
+.accordion__input_item-3:checked
+  ~ .accordion__items
+  .accordion__item_3
+  .accordion__item-title,
+.accordion__input_item-4:checked
+  ~ .accordion__items
+  .accordion__item_4
+  .accordion__item-title {
+  color: #000000;
 }
 
-.accordion__item-image {
-  display: none;
+.accordion__input_item-1:checked
+  ~ .accordion__items
+  .accordion__item_1
+  .accordion__item-icon,
+.accordion__input_item-2:checked
+  ~ .accordion__items
+  .accordion__item_2
+  .accordion__item-icon,
+.accordion__input_item-3:checked
+  ~ .accordion__items
+  .accordion__item_3
+  .accordion__item-icon,
+.accordion__input_item-4:checked
+  ~ .accordion__items
+  .accordion__item_4
+  .accordion__item-icon {
+  transform: rotate(45deg);
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .accordion {
+    font-size: 0.075rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .accordion {
+    font-size: 0.0875rem;
+  }
 }
